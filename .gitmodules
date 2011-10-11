@@ -1,0 +1,3 @@
+[submodule "SubHeadSub"]
+	path = SubHeadSub
+	url = git@github.com:akutz/SubHeadSub.git
