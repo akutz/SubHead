@@ -33,9 +33,9 @@ Receiving objects: 100% (3/3), done.
 
 4. Add a new, empty file to "SubHeadSub" named "Missing", commit, and push the changes.
 
-4. Delete the local branches of "SubHead" and "SubHeadSub".
+5. Delete the local branches of "SubHead" and "SubHeadSub".
 
-5. Clone "SubHead" and its submodules by issuing the following command:
+6. Clone "SubHead" and its submodules by issuing the following command:
 
 git clone --recurse-submodules git@github.com:akutz/SubHead.git
 
@@ -56,24 +56,24 @@ Submodule path 'SubHeadSub': checked out '92ec5e9d123fb92cf77e589b1ba6be9382f7b7
 
 Notice that a specific commit, '92ec5e9d123fb92cf77e589b1ba6be9382f7b717', of the repository "SubHeadSub" was cloned, not the HEAD, which is commit '6330628780cfcf9d98704b83d2bfb86381a98022'.
 
-6. Listing the files in the "SubHeadSub" submodule will reveal that the file "Missing" added *after* the submodule reference was created is in fact missing. So how do we update the parent to point to the HEAD of the submodule repository?
+7. Listing the files in the "SubHeadSub" submodule will reveal that the file "Missing" added *after* the submodule reference was created is in fact missing. So how do we update the parent to point to the HEAD of the submodule repository?
 
-7. If you issue the command "git branch" in the submodule directory you'll notice that the master branch isn't checked out. In fact no branches are checked out because submodules are cloned in a detached state. 
+8. If you issue the command "git branch" in the submodule directory you'll notice that the master branch isn't checked out. In fact no branches are checked out because submodules are cloned in a detached state. 
 
-8. Checkout the master branch of the submodule.
+9. Checkout the master branch of the submodule.
 
-9. Voila! The file "Missing" is now present. 
+10. Voila! The file "Missing" is now present. 
 
-10. Commit and push the parent repository by issuing the following commands:
+11. Commit and push the parent repository by issuing the following commands:
 
 git commit -a -m '-updated submodule reference'
 git push
 
 This will update the parent repository's reference to the submodule so the former now points to the most recent version, or the HEAD, of the submodule's repository. Push the changes as well.
 
-11. Delete the local branch of "SubHead". This will of course delete the submodule "SubHeadSub" as well.
+12. Delete the local branch of "SubHead". This will of course delete the submodule "SubHeadSub" as well.
 
-12. Clone "SubHead" and its submodules again. This time you'll notice that the commit of "SubHeadSub" cloned is '6330628780cfcf9d98704b83d2bfb86381a98022' instead of '92ec5e9d123fb92cf77e589b1ba6be9382f7b717'. In fact, if you list the submodules of the "SubHead" repository you'll see that you are now pointed to the HEAD of the master branch of "SubHeadSub":
+13. Clone "SubHead" and its submodules again. This time you'll notice that the commit of "SubHeadSub" cloned is '6330628780cfcf9d98704b83d2bfb86381a98022' instead of '92ec5e9d123fb92cf77e589b1ba6be9382f7b717'. In fact, if you list the submodules of the "SubHead" repository you'll see that you are now pointed to the HEAD of the master branch of "SubHeadSub":
 
 [0]akutz@bean:SubHead$ git submodule
  6330628780cfcf9d98704b83d2bfb86381a98022 SubHeadSub (heads/master)
