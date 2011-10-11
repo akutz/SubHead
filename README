@@ -6,7 +6,7 @@ Git repositories support submodules, or references to other repositories, by poi
 
 git submodule add "git@github.com:akutz/SubHeadSub.git" SubHeadSub
 
-The above command would create a pointer/reference/submodule in the "SubHead" repository that points to the "SubHeadSub" project. However, if new commits are pushed to the "SubHeadSub" project the next time the "SubHead" project and its submodules are cloned, the commits pushed to the "SubHeadSub" project after it was added as a submodule to "SubHead" will not be present. 
+The above command would create a pointer/reference/submodule in the "SubHead" repository that points to the "SubHeadSub" project. However, if new commits are pushed to the "SubHeadSub" project, the next time the "SubHead" project and its submodules are cloned, the commits pushed to the "SubHeadSub" project after it was added as a submodule to "SubHead" will not be present. 
 
 Why?
 
